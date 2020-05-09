@@ -6,10 +6,10 @@
 #include<stdlib.h>
 
 int main() {
-
-
-
-
+	char** level1;
+	level1 = BeolvasPalya("be1.txt");
+	printf("Egyes szint:\n");
+	KiirPalya(level1);
 
 
 

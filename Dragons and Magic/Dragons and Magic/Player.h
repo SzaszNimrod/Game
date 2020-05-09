@@ -19,9 +19,13 @@ typedef struct Player {
 Hos* Create();    //Letrehoza a jatekost
 void Destroy(Hos* jatekos);  //Kitorli a jatekos adatait
 void KiirHosStatistica(Hos* jatekos); //Kiirja a jatekos adatait 
-Hos* BeolvasHosAdatait(); // beolvasa a jatekos adatait 
+void BeolvasHosAdatait(Hos* jatekos); // beolvasa a jatekos adatait 
 
 
+
+
+char** BeolvasPalya(const char* file); // palya beolvasa
+void KiirPalya(char** level); //palya kiiratasa
 
 
 
