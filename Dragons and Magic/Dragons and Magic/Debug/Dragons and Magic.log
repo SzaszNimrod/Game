@@ -1,17 +1,20 @@
-﻿  Player.c
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(19,45): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(24,45): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(29,48): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(34,45): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(39,46): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(44,46): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(49,48): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(61,18): warning C4022: 'free': pointer mismatch for actual parameter 1
+﻿  Dragons and Magic.c
+  Player.c
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(20,45): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(25,45): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(30,48): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(35,45): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(40,46): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(45,46): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(50,48): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
 C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(62,18): warning C4022: 'free': pointer mismatch for actual parameter 1
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(63,21): warning C4022: 'free': pointer mismatch for actual parameter 1
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(64,18): warning C4022: 'free': pointer mismatch for actual parameter 1
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(65,19): warning C4022: 'free': pointer mismatch for actual parameter 1
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(63,18): warning C4022: 'free': pointer mismatch for actual parameter 1
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(64,21): warning C4022: 'free': pointer mismatch for actual parameter 1
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(65,18): warning C4022: 'free': pointer mismatch for actual parameter 1
 C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(66,19): warning C4022: 'free': pointer mismatch for actual parameter 1
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(67,21): warning C4022: 'free': pointer mismatch for actual parameter 1
-C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(187): warning C4715: 'Harc': not all control paths return a value
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(67,19): warning C4022: 'free': pointer mismatch for actual parameter 1
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(68,21): warning C4022: 'free': pointer mismatch for actual parameter 1
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(199,20): warning C4013: 'getch' undefined; assuming extern returning int
+  Generating Code...
+C:\Project\Game-Szamtech-I-C\Dragons and Magic\Dragons and Magic\Player.c(188): warning C4715: 'Harc': not all control paths return a value
   Dragons and Magic.vcxproj -> C:\Project\Game-Szamtech-I-C\Dragons and Magic\Debug\Dragons and Magic.exe

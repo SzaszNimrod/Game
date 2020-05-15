@@ -17,6 +17,7 @@ typedef struct Player {
 	int xp; //jatekos tapasztalati pontja a kovetkezo szintlepesre szugseges ami kinyit uj keppeseget
 	int atk; //tamado erteke a jatekosnak 
 	int def; //vedekezo erteke a jatekosnak
+	
 }Hos;
 
 Hos* Create();    //Letrehoza a jatekost
@@ -28,7 +29,7 @@ void BeolvasEllensegAdataitG(Hos* jatekos); // beolvasa a goblin adatait
 void KiirEllensegStatisticaS(Hos* jatekos); //kiir sarkany adatai
 void KiirEllensegStatisticaG(Hos* jatekos); //kiir goblin adatai
 int Harc(Hos* Tamado, Hos* Vedekezo);
-
+void Mozgas(char** level); //jatekos mozgasa es ellensegekel valo interakcioja es a palyaval valo interakcio
 
 char** BeolvasPalya(const char* file); // palya beolvasa
 void KiirPalya(char** level); //palya kiiratasa

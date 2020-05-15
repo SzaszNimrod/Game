@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int lenght, width;
+
 Hos* Create()
 {
 	Hos* jatekos;
@@ -185,6 +186,46 @@ int Harc(Hos* Tamado, Hos* Vedekezo)
 		}
 	}
 }
+void Mozgas(char** level)
+{
+	int X, Y;
+	int jX = 1, jY = 1;
+	level[jX][jY] = 'H';
+	
+		while (level[jX][jY] != 'C') {
+
+			KiirPalya(level);
+			printf("Fell:w\nLe: s\nJobbra: d\nBallra: a\n");
+			char opt = getch();
+			X = jX;
+			Y = jY;
+			if (opt == 'd') {
+				jY++;
+			}
+			if (opt == 's') {
+				jX++;
+			}
+			if (opt == 'a') {
+				jY--;
+			}
+			if (opt == 'w') {
+				jX--;
+			}
+
+			if (level[jX][jY] == '0') {
+				level[jX][jY] = 'H';
+				level[X][Y] = '0';
+			}
+			if (level[jX][jY] == '3'|| level[jX][jY] == '1') {
+				printf("\nSajnos meghaltal a mergezo tuskekben probald meg ujra!\n");
+				exit(1);
+			}
+			
+
+			
+		}
+}
+
 
 char** BeolvasPalya(const char* file)
 {
@@ -224,16 +265,16 @@ void KiirPalya(char** level)
 				printf("|");
 			}
 			if (level[i][j] == '0') {
-				printf(" ");
+				printf(" "); 
 			}
 			if (level[i][j] == '1') {
-				printf("*");
+				printf("*"); // mergezo tuskek
 			}
 			if (level[i][j] == 'C') {
-				printf("C");
+				printf("C");  //cel
 			}
 			if (level[i][j] == 'H') {
-				printf("H");
+				printf("H");  //karakter
 			}
 			if (level[i][j] == 'L') {
 				printf(" "); //rejtet lada 
@@ -247,4 +288,6 @@ void KiirPalya(char** level)
 		}
 		printf("\n");
 	}
+
+
 }
