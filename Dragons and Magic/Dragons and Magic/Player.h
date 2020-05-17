@@ -28,8 +28,11 @@ void BeolvasEllensegAdataitS(Hos* jatekos); // beolvasa a sarkany adatait
 void BeolvasEllensegAdataitG(Hos* jatekos); // beolvasa a goblin adatait 
 void KiirEllensegStatisticaS(Hos* jatekos); //kiir sarkany adatai
 void KiirEllensegStatisticaG(Hos* jatekos); //kiir goblin adatai
-int Harc(Hos* Tamado, Hos* Vedekezo);
-void Mozgas(char** level); //jatekos mozgasa es ellensegekel valo interakcioja es a palyaval valo interakcio
+int Harc(Hos* Tamado, Hos* Vedekezo); //tamadasok megirasanak a helye
+void Mozgas(char** level, Hos* jatekos); //jatekos mozgasa es ellensegekel valo interakcioja es a palyaval valo interakcio
+
+
+
 
 char** BeolvasPalya(const char* file); // palya beolvasa
 void KiirPalya(char** level); //palya kiiratasa
