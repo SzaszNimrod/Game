@@ -40,7 +40,7 @@ Hos* Create()
 		printf("Nem sikerult  xp-nek letrehozasa!");
 		return 0;
 	}
-	jatekos->atk = (int*)calloc(50, sizeof(int)); //Alap atk ertek 15.
+	jatekos->atk = (int*)calloc(50, sizeof(int)); //Alap atk ertek 20.
 	if (!jatekos->atk) {
 		printf("Nem sikerult  atk-nak a letrehozasa!");
 		return 0;
@@ -91,7 +91,7 @@ void BeolvasHosAdatait(Hos* jatekos)
 	scanf("%[^\n]", jatekos->name);
 	jatekos->hp = 100;  //Alap ertekek 
 	jatekos->mp = 250;
-	jatekos->atk = 15;
+	jatekos->atk = 20;
 	jatekos->mpatk = 30;
 	jatekos->def = 10;
 	jatekos->xp = 0;
@@ -102,16 +102,16 @@ void BeolvasHosAdatait(Hos* jatekos)
 void BeolvasEllensegAdataitS(Hos* jatekos)
 {
 
-	jatekos->hp = 650;  //Alap ertekek Sarkany
-	jatekos->atk = 50;
-	jatekos->def = 100;
+	jatekos->hp = 250;  //Alap ertekek Sarkany
+	jatekos->atk = 25;
+	jatekos->def = 15;
 }
 
 void BeolvasEllensegAdataitG(Hos* jatekos)
 {
 
 	jatekos->hp = 80;  //Alap ertekek Goblin
-	jatekos->atk = 20;
+	jatekos->atk = 16;
 	jatekos->def = 3;
 	
 }
@@ -150,12 +150,16 @@ int Harc(Hos* Tamado, Hos* Vedekezo)
 		scanf("%d", &valasz);
 		switch (valasz) {
 		case 1:
-
 			Vedekezo->hp = Vedekezo->hp - Tenylegessebzes;
 			printf("Ennyi eletereje marad az ellensegnek:  %d\n", Vedekezo->hp);
-			Tamado->hp = Tamado->hp - Tenylegessebzes1;
-			printf("Ennyi eleterod maradt:  %d\n", Tamado->hp);
-			printf("Kardal valo tamadasod ereje:  %d\n", Tenylegessebzes);
+			if (Vedekezo->atk >= Tamado->def) {
+				Tamado->hp = Tamado->hp - Tenylegessebzes1;
+				printf("Ennyi eleterod maradt:  %d\n", Tamado->hp);
+				printf("Kardal valo tamadasod ereje:  %d\n", Tenylegessebzes);
+			}
+			else {
+				printf("Tamadas blokolva!\n");
+			}
 			printf("Valasz ki a lehetosegeid:\n1.Tamadas kardal\n2.Tamadas magiaval(50 mana)\n3.Menekules(hp vesztesegel jarhat!)\n");
 			break;
 		case 2:
@@ -166,12 +170,17 @@ int Harc(Hos* Tamado, Hos* Vedekezo)
 			else {
 				Vedekezo->hp = Vedekezo->hp - Tenylegessebzes2;
 				printf("Ennyi eletereje marad az ellensegnek:  %d\n", Vedekezo->hp);
-				Tamado->hp = Tamado->hp - Tenylegessebzes1;
-				mana = Tamado->mp - 50;
-				Tamado->mp = mana;
-				printf("Ennyi eleterod maradt:  %d\n", Tamado->hp);
-				printf("Ennyi magiad maradt:  %d\n", Tamado->mp);
-				printf("Magiadal valo tamadasod ereje:  %d\n", Tenylegessebzes2);
+				if (Vedekezo->atk >= Tamado->def) {
+					Tamado->hp = Tamado->hp - Tenylegessebzes1;
+					mana = Tamado->mp - 50;
+					Tamado->mp = mana;
+					printf("Ennyi eleterod maradt:  %d\n", Tamado->hp);
+					printf("Ennyi magiad maradt:  %d\n", Tamado->mp);
+					printf("Magiadal valo tamadasod ereje:  %d\n", Tenylegessebzes2);
+				}
+				else {
+					printf("Tamadas blokolva!\n");
+				}
 				printf("Valasz ki a lehetosegeid:\n1.Tamadas kardal\n2.Tamadas magiaval(50 mana)\n3.Menekules(hp vesztesegel jarhat!)\n");
 
 			}
@@ -179,9 +188,14 @@ int Harc(Hos* Tamado, Hos* Vedekezo)
 		case 3:
 			printf("Menekules kozben elszenvedet sebzes: \n");
 			srand(time(0));
-			int szam1 = (rand() % (15 - 0 + 1)) + 0;
+			int szam1 = (rand() % (35 - 0 + 1)) + 0;
 			printf("%d\n", szam1);
+			Tamado->hp = Tamado->hp - szam1;
 			printf("Ennyi eleterod maradt:  %d\n", Tamado->hp);
+			printf("A menekules miatt csak egy reszet tudtad megszerezni a tapasztalati pontnak!\n");
+			if (Tamado->xp > 0) {
+				Tamado->xp = Tamado->xp - 40;
+			}
 			return 0;
 		default:
 			printf("Nincs ilyen valasztas!\n");
@@ -250,7 +264,7 @@ void Mozgas(char** level, Hos* jatekos)
 					level[X][Y] = '0';
 				}
 				jatekos->xp = jatekos->xp + 50;
-				printf("XP+25\n Tapasztalati pontok:%d\n", jatekos->xp);
+				printf("XP+50\nTapasztalati pontok:%d\n", jatekos->xp);
 				if (jatekos->xp == 100 || jatekos->xp == 250 || jatekos->xp == 500 || jatekos->xp == 1000) {
 					jatekos->level = jatekos->level + 1;
 					printf("Szintett leptel!\n Jellenlegi szit: %d\n", jatekos->level);
@@ -265,7 +279,7 @@ void Mozgas(char** level, Hos* jatekos)
 						break;
 					case 2:
 						jatekos->def = jatekos->def + 5;
-						printf("Vedekezo ertek megnovelve: +5-el!\n Jellenlegi vedekezo ertek: %d\n", jatekos->def);
+						printf("Vedekezo ertek megnovelve: +5-el!\nJellenlegi vedekezo ertek: %d\n", jatekos->def);
 						break;
 
 					default:
@@ -290,7 +304,7 @@ void Mozgas(char** level, Hos* jatekos)
 					level[X][Y] = '0';
 				}
 				jatekos->xp = jatekos->xp + 100;
-				printf("XP+100\n Tapasztalati pontok:%d\n", jatekos->xp);
+				printf("XP+100\nTapasztalati pontok:%d\n", jatekos->xp);
 				if (jatekos->xp == 100  || jatekos->xp == 250 || jatekos->xp == 500 || jatekos->xp==1000) {
 					jatekos->level = jatekos->level + 1;
 					printf("Szintett leptel!\n Jellenlegi szit: %d\n", jatekos->level);
@@ -300,12 +314,12 @@ void Mozgas(char** level, Hos* jatekos)
 					switch (valasz1) {
 
 					case 1:
-						jatekos->atk = jatekos->atk + 5;
-						printf("Tamado ertek megnovelve: +5-el!\n");
+						jatekos->atk = jatekos->atk + 8;
+						printf("Tamado ertek megnovelve: +8-el!\n");
 						break;
 					case 2:
-						jatekos->def = jatekos->def + 5;
-						printf("Vedekezo ertek megnovelve: +5-el!\n Jellenlegi vedekezo ertek: %d\n",jatekos->def);
+						jatekos->def = jatekos->def + 6;
+						printf("Vedekezo ertek megnovelve: +6-el!\nJellenlegi vedekezo ertek: %d\n",jatekos->def);
 						break;
 				
 					default:
@@ -332,12 +346,12 @@ void Mozgas(char** level, Hos* jatekos)
 					jatekos->hp = jatekos->hp + 50;
 					break;
 				case 3:
-					printf("Megtalaltad a Elveszet Gyurut(Magikus ero megnovelve +20)\n");
-					jatekos->mpatk = jatekos->mpatk + 20;
+					printf("Megtalaltad a Elveszet Gyurut(Magikus ero megnovelve +15)\n");
+					jatekos->mpatk = jatekos->mpatk + 15;
 					break;
 				case 4:
-					printf("Megtalaltad a Vanadium Pajzsot(Vedekezo ero megnovelve +20)\n");
-					jatekos->def = jatekos->def + 20;
+					printf("Megtalaltad a Vanadium Pajzsot(Vedekezo ero megnovelve +9)\n");
+					jatekos->def = jatekos->def + 9;
 					break;
 				case 5:
 					printf("Megtalaltad a Tiszta Lelkek Forrasat(Mana szint +50)\n");
