@@ -241,7 +241,9 @@ void Mozgas(char** level, Hos* jatekos)
 	            gb = Create();
 	            BeolvasEllensegAdataitG(gb);
 	            KiirEllensegStatisticaG(gb);
+				printf("\n");
 				KiirHosStatistica(jatekos);
+				printf("\n");
 	            Harc(jatekos, gb);
 				if (level[jX][jY] == 'G') {
 					level[jX][jY] = 'H';
@@ -279,7 +281,9 @@ void Mozgas(char** level, Hos* jatekos)
 				s = Create();
 			    BeolvasEllensegAdataitS(s);
 			    KiirEllensegStatisticaS(s);
+				printf("\n");
 				KiirHosStatistica(jatekos);
+				printf("\n");
 				Harc(jatekos, s);
 				if (level[jX][jY] == 'S') {
 					level[jX][jY] = 'H';
@@ -313,6 +317,10 @@ void Mozgas(char** level, Hos* jatekos)
 			if (level[jX][jY] == 'L') {
 				srand(time(0));
 				int szam = (rand() % (6 - 1 + 1)) + 1;
+				if (level[jX][jY] == 'L') {
+					level[jX][jY] = 'H';
+					level[X][Y] = '0';
+				}
 				switch (szam) {
 
 				case 1:

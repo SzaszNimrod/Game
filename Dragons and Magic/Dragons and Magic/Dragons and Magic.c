@@ -19,6 +19,7 @@ int main() {
 	case 1:
 		printf("Remek kezdodjon a jatek!\n");
 		KiirHosStatistica(j1);
+		printf("\n");
 		char** level1;
 		level1 = BeolvasPalya("be1.txt");
 		printf("Egyes szint:\n");
@@ -28,6 +29,7 @@ int main() {
 		level2 = BeolvasPalya("be2.txt");
 		printf("Masodik szint:\n");
 		KiirHosStatistica(j1);
+		printf("\n");
 		Mozgas(level2, j1);
 		printf("Gratulalok masodik szint telyesitve!\n");
 		printf("Utolso szint kezdodik!\n");
@@ -35,6 +37,7 @@ int main() {
 		level3 = BeolvasPalya("be3.txt");
 		printf("Harmadik szint:\n");
 		KiirHosStatistica(j1);
+		printf("\n");
 		Mozgas(level3, j1);
 		printf("Gratulalok jatek telyesitve\n");
 		if (j1->level >= 1150) {
