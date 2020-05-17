@@ -241,19 +241,20 @@ void Mozgas(char** level, Hos* jatekos)
 	            gb = Create();
 	            BeolvasEllensegAdataitG(gb);
 	            KiirEllensegStatisticaG(gb);
+				KiirHosStatistica(jatekos);
 	            Harc(jatekos, gb);
 				if (level[jX][jY] == 'G') {
 					level[jX][jY] = 'H';
 					level[X][Y] = '0';
 				}
 				jatekos->xp = jatekos->xp + 50;
-				printf("XP+25\n Tapasztalati pontok:%d ", jatekos->xp);
+				printf("XP+25\n Tapasztalati pontok:%d\n", jatekos->xp);
 				if (jatekos->xp == 100 || jatekos->xp == 250 || jatekos->xp == 500 || jatekos->xp == 1000) {
 					jatekos->level = jatekos->level + 1;
-					printf("Szintett leptel!\n Jellenlegi szit: %d", jatekos->level);
+					printf("Szintett leptel!\n Jellenlegi szit: %d\n", jatekos->level);
 					int valasz2;
-					scanf("%d", &valasz2);
 					printf("1.Tamado ertek noveles\n2.Vedekezo ertek noveles\n");
+					scanf("%d", &valasz2);
 					switch (valasz2) {
 
 					case 1:
@@ -262,7 +263,7 @@ void Mozgas(char** level, Hos* jatekos)
 						break;
 					case 2:
 						jatekos->def = jatekos->def + 5;
-						printf("Vedekezo ertek megnovelve: +5-el!\n Jellenlegi vedekezo ertek: %d", jatekos->def);
+						printf("Vedekezo ertek megnovelve: +5-el!\n Jellenlegi vedekezo ertek: %d\n", jatekos->def);
 						break;
 
 					default:
@@ -276,21 +277,22 @@ void Mozgas(char** level, Hos* jatekos)
 			if (level[jX][jY] == 'S') {
 				Hos* s;
 				s = Create();
-				void BeolvasEllensegAdataitS(s);
-				void KiirEllensegStatisticaS(s);
+			    BeolvasEllensegAdataitS(s);
+			    KiirEllensegStatisticaS(s);
+				KiirHosStatistica(jatekos);
 				Harc(jatekos, s);
 				if (level[jX][jY] == 'S') {
 					level[jX][jY] = 'H';
 					level[X][Y] = '0';
 				}
 				jatekos->xp = jatekos->xp + 100;
-				printf("XP+25\n Tapasztalati pontok:%d ", jatekos->xp);
+				printf("XP+100\n Tapasztalati pontok:%d\n", jatekos->xp);
 				if (jatekos->xp == 100  || jatekos->xp == 250 || jatekos->xp == 500 || jatekos->xp==1000) {
 					jatekos->level = jatekos->level + 1;
-					printf("Szintett leptel!\n Jellenlegi szit: %d", jatekos->level);
+					printf("Szintett leptel!\n Jellenlegi szit: %d\n", jatekos->level);
 					int valasz1;
-					scanf("%d", &valasz1);
 					printf("1.Tamado ertek noveles\n2.Vedekezo ertek noveles\n");
+					scanf("%d", &valasz1);
 					switch (valasz1) {
 
 					case 1:
@@ -299,7 +301,7 @@ void Mozgas(char** level, Hos* jatekos)
 						break;
 					case 2:
 						jatekos->def = jatekos->def + 5;
-						printf("Vedekezo ertek megnovelve: +5-el!\n Jellenlegi vedekezo ertek: %d",jatekos->def);
+						printf("Vedekezo ertek megnovelve: +5-el!\n Jellenlegi vedekezo ertek: %d\n",jatekos->def);
 						break;
 				
 					default:

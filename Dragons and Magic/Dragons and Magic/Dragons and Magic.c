@@ -10,9 +10,9 @@ int main() {
 	Hos* j1;
 	j1 = Create();
 	BeolvasHosAdatait(j1);
-	printf("Udvozollek %s a Dragons and Magic vilagaban!\nA feladatod az ellensegek legyozese a relytet kincsek megtalalasa(opcionalis) es a cel ellerese\n",j1->name);
+	printf("Udvozollek %s a Dragons and Magic vilagaban!\nA feladatod az ellensegek legyozese a relytet kincsek megtalalasa(opcionalis) es a cel ellerese.\n",j1->name);
 	printf("A palyan a * a hallalos tuskeket mutatja ameleykhez hozza erve veget er a jatek ugyanigy ha kimesz a palyarol az is GAME OVER!\n");
-	printf("Sok sikert a jatekhoz!\nRemelem keszen alsz a galandra!\n 1.Igen\n 2.Nem\n");
+	printf("Sok sikert a jatekhoz!\nRemelem keszen alsz a kalandra!\n 1.Igen\n 2.Nem\n");
 	scanf("%d", &v1);
 	switch (v1)
 	{
