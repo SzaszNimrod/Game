@@ -102,7 +102,7 @@ void BeolvasHosAdatait(Hos* jatekos)
 void BeolvasEllensegAdataitS(Hos* jatekos)
 {
 
-	jatekos->hp = 250;  //Alap ertekek Sarkany
+	jatekos->hp = 135;  //Alap ertekek Sarkany
 	jatekos->atk = 25;
 	jatekos->def = 15;
 }
